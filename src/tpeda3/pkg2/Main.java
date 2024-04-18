@@ -27,19 +27,24 @@ public class Main {
 
         Pila a=new Pila(10);
         Pila b=new Pila(10);
-        a.push(1);
-        a.push(2);
-        a.push(300);
-        a.push(400);
         a.push(500);
+        a.push(400);
+        a.push(300);
+        a.push(2);
+        a.push(-5);
         
-        b.push(10);
-        b.push(20);
-        b.push(30);
-        b.push(40);
+        a.verElementos();
+        
         b.push(50);
+        b.push(40);
+        b.push(30);
+        b.push(20);
+        b.push(10);
+        
+        b.verElementos();
 
         Pila.unidosNoMezclados(a, b);
+        
         
 //        Esto seria si el metodo no fuera estatico
 //        Pila c=new Pila(10);

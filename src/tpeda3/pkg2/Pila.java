@@ -92,23 +92,32 @@ public class Pila {
     public static void unidosNoMezclados(Pila a, Pila b){
         Pila c = new Pila(a.getTamaño());
         
-        while (!a.pilaVacia() || !b.pilaVacia()) {
+        while (!a.pilaVacia() && !b.pilaVacia()) {
             /*los 2 primeros if son solo para que si una pila está vacia,
             directamente pase a meter los elementos de la otra, sin esos if 
             tambien funciona, pero si una pila esta vacia su metodo verElemento() 
             va a devolver -1 y va a comparar con eso el elemento de la otra pila*/
-            if(a.pilaVacia()){
+            /*if(a.pilaVacia()){
                 c.push(b.pop());
             }else if(b.pilaVacia()){
                 c.push(a.pop());
-            }else if (a.verElemento()>b.verElemento()) {
+            }else if (a.verElemento()<b.verElemento()) {
                 c.push(a.pop());
-            }else if(a.verElemento()<b.verElemento()){
+            }else if(a.verElemento()>b.verElemento()){
                 c.push(b.pop());
             }else if(b.verElemento()==a.verElemento()){
                 c.push(b.pop());
                 c.push(a.pop());
-            }
+            }*/
+            if(a.verElemento()<=b.verElemento()){
+                c.push(a.pop());
+            }else if(a.verElemento()>=b.verElemento()){
+                c.push(b.pop());
+            }/*else if (b.verElemento()==a.verElemento()) {
+                c.push(b.pop());
+                c.push(a.pop());
+               
+            }*/
         }
         
             while(!c.pilaVacia()) {
@@ -120,6 +129,6 @@ public class Pila {
             while(!b.pilaVacia()) {
                 c.push(b.pop());
             }
-//            c.verElementos();
+            c.verElementos();
     }
 }
