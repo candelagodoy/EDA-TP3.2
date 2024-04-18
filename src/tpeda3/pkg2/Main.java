@@ -31,7 +31,7 @@ public class Main {
         a.push(400);
         a.push(300);
         a.push(2);
-        a.push(-5);
+        a.push(1);
         
         a.verElementos();
         
@@ -43,7 +43,7 @@ public class Main {
         
         b.verElementos();
 
-        Pila.unidosNoMezclados(a, b);
+        Pila.unidosNoMezclados(b, a);
         
         
 //        Esto seria si el metodo no fuera estatico

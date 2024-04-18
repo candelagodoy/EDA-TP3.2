@@ -109,15 +109,15 @@ public class Pila {
                 c.push(b.pop());
                 c.push(a.pop());
             }*/
-            if(a.verElemento()<=b.verElemento()){
+            if(a.verElemento()<b.verElemento()){
                 c.push(a.pop());
-            }else if(a.verElemento()>=b.verElemento()){
+            }else if(a.verElemento()>b.verElemento()){
                 c.push(b.pop());
-            }/*else if (b.verElemento()==a.verElemento()) {
+            }else if (b.verElemento()==a.verElemento()) {
                 c.push(b.pop());
                 c.push(a.pop());
                
-            }*/
+            }
         }
         
             while(!c.pilaVacia()) {
