@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package tpeda3.pkg2;
 
-/**
- *
- * @author NandoJ
- */
 public class Pila {
 
     private int n;
@@ -55,14 +47,6 @@ public class Pila {
     public boolean pilaLlena() {
         return (tope == (n - 1));
     }
-
-    public void verElementos() {
-        for (int i = 0; i < n; i++) {
-            System.out.print("[" + pila[i] + "]");
-        }
-        System.out.println("");
-        System.out.println("");
-    }
     
     public int verElemento() {
         if (!pilaVacia()) {
@@ -80,7 +64,6 @@ public class Pila {
         while(!pilaVacia() && x<verElemento()){
             pilaAux.push(pop());
         }
-        pilaAux.verElementos();
         push(x);
         
         while(!pilaAux.pilaVacia()){
@@ -89,15 +72,12 @@ public class Pila {
 
     }
     
-    public static void unidosNoMezclados(Pila a, Pila b){
+    public static Pila unidosNoMezclados(Pila a, Pila b){
         Pila c = new Pila(a.getTamaño());
         
-        while (!a.pilaVacia() && !b.pilaVacia()) {
-            /*los 2 primeros if son solo para que si una pila está vacia,
-            directamente pase a meter los elementos de la otra, sin esos if 
-            tambien funciona, pero si una pila esta vacia su metodo verElemento() 
-            va a devolver -1 y va a comparar con eso el elemento de la otra pila*/
-            /*if(a.pilaVacia()){
+        while (!a.pilaVacia() || !b.pilaVacia()) {
+            
+            if(a.pilaVacia()){
                 c.push(b.pop());
             }else if(b.pilaVacia()){
                 c.push(a.pop());
@@ -108,18 +88,8 @@ public class Pila {
             }else if(b.verElemento()==a.verElemento()){
                 c.push(b.pop());
                 c.push(a.pop());
-            }*/
-            if(a.verElemento()<b.verElemento()){
-                c.push(a.pop());
-            }else if(a.verElemento()>b.verElemento()){
-                c.push(b.pop());
-            }else if (b.verElemento()==a.verElemento()) {
-                c.push(b.pop());
-                c.push(a.pop());
-               
             }
-        }
-        
+        }       
             while(!c.pilaVacia()) {
                 a.push(c.pop());
             }
@@ -129,6 +99,6 @@ public class Pila {
             while(!b.pilaVacia()) {
                 c.push(b.pop());
             }
-            c.verElementos();
+            return c;
     }
 }
