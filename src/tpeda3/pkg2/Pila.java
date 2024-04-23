@@ -56,6 +56,11 @@ public class Pila {
         }
         
     }
+    public void verElementos(){
+        for (int elemento : pila) {
+            System.out.print(elemento + " ");
+        }
+    }
 
 
     public void pushOrdenado(int x) {
@@ -77,16 +82,17 @@ public class Pila {
         
         while (!a.pilaVacia() || !b.pilaVacia()) {
             
-            if(a.pilaVacia()){
+            if (a.verElemento()<b.verElemento() && !b.pilaVacia()&& !a.pilaVacia()) {
+                c.push(a.pop());
+            }else if(a.verElemento()>b.verElemento() && !a.pilaVacia() && !b.pilaVacia()){
+                c.push(b.pop());
+            }else if(b.verElemento()==a.verElemento()&& !a.pilaVacia() && !b.pilaVacia()){
+                c.push(b.pop());
+                c.push(a.pop());
+            }
+            else if(a.pilaVacia()){
                 c.push(b.pop());
             }else if(b.pilaVacia()){
-                c.push(a.pop());
-            }else if (a.verElemento()<b.verElemento()) {
-                c.push(a.pop());
-            }else if(a.verElemento()>b.verElemento()){
-                c.push(b.pop());
-            }else if(b.verElemento()==a.verElemento()){
-                c.push(b.pop());
                 c.push(a.pop());
             }
         }       

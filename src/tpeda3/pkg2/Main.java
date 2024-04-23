@@ -16,6 +16,7 @@ public class Main {
         //Complejidad media: d. Unidos no mezclados
         Pila a=new Pila(10);
         Pila b=new Pila(10);
+        
         a.push(800);
         a.push(50);
         a.push(40);
@@ -29,7 +30,8 @@ public class Main {
         b.push(20);
         b.push(10);
         
-        Pila c=Pila.unidosNoMezclados(a, b);
+        Pila c=Pila.unidosNoMezclados(a,b);
+        c.verElementos();
 
     }
     
